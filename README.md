@@ -43,3 +43,11 @@
 - **musicalmode**: Equivalent to the 'mode' field in the Spotify Web API syntax. Mode indicates the modality (major or minor) of a track, the type of scale from which its melodic content is derived. Major is represented by 1 and minor is 0, `int`  
 - **time_signature**: An estimated time signature. The time signature (meter) is a notational convention to specify how many beats are in each bar (or measure). The time signature ranges from 3 to 7 indicating time signatures of "3/4", to "7/4", `int`, only 5 time signatures are represented  
 
+## Data Pre-Processing
+
+### Combining the tables
+- The artist csv was loaded as `df1` whereas the track csv was loaded as `df2`.
+- The artist `id` along with their `popularity` was matched with the track csv - containg the `artists` column, using a natural join.
+- Furthermore, since the resulting tracks may have more than 1 artist, it was expanded to have more 1 artist have a unique song under them.
+- The combined dataframe `merged_df` was then created, dropping unncessary tables such as `dates`, `names`, `ds`, `count`, `release date` and `playlists_found`, which all contained string data.
+- The resulting final csv was saved as `final.csv`.
