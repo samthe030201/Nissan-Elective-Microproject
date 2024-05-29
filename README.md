@@ -1,7 +1,7 @@
 # Nissan-Elective-Microproject
 ## CSV Documentation
 ### 1. featured_Spotify_artist_info.csv
-dates: Date that an artist was featured, str
+dates: Date that an artist was featured, str\n
 ids: Unique Spotify IDs of each artist, str
 names: Spotify artist name, str
 monthly_listeners: The number of unique monthly listeners for each artist, collected during April and May 2024. This is the most reliable measure of an artist's popularity, that's publicly available on Spotify, float, 0 if absent
