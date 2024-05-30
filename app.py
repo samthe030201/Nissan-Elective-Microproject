@@ -4,8 +4,7 @@ import numpy as np
 
 app = Flask(__name__)
 
-# Load the trained model (assuming it is saved as 'model.joblib')
-model = joblib.load('model.joblib')
+model = joblib.load('xg_model.sav')
 
 # Define a function to map the prediction to popularity range
 def map_prediction_to_popularity(prediction):
