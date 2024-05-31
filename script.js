@@ -35,3 +35,12 @@ function generateRandomValues() {
     document.getElementById('time_signature').value = Math.floor(Math.random() * 5) + 3;
     document.getElementById('count').value = Math.floor(Math.random() * 34)+1;
 }
+
+function clearFormValues() {
+    const inputs = document.querySelectorAll("#predictionForm input[type='number']");
+    inputs.forEach(input => {
+        input.value = '';
+    });
+    document.getElementById('predictionResult').innerText = '';
+    
+}

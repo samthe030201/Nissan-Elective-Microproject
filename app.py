@@ -7,7 +7,7 @@ import numpy as np
 app = Flask(__name__)
 CORS(app)
 
-model = pickle.load(open('xg_model.sav', 'rb'))
+model = pickle.load(open('C:/Users/sampt/Documents/Nissan PE/Micro Project/xg_model.sav', 'rb'))
 
 '''print(model.get_booster().feature_names)
 example_features = [3, 1, 200000, 0.5, 0.8, 0.7, 0.0, 0.2, -5, 0.3, 120, 0.6, 1, 1, 4]
