@@ -2,7 +2,7 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, rgba(29, 185, 84, 0.8), rgba(25, 20, 20, 0.8)), url('background-image.jpg') no-repeat center center fixed;
+    background: linear-gradient(135deg, rgba(29, 185, 84, 0.8), rgba(25, 20, 20, 0.8));
     background-size: cover;
     color: #fff;
     display: flex;
@@ -11,20 +11,48 @@ body {
     height: 100vh;
     margin: 0;
     overflow: hidden;
-    animation: moveBackground 200ms linear infinite;
-}
+    animation: moveBackground 10s infinite, glowEffect 3s ease-in-out infinite, changeBackground 7s ease-in-out infinite ;
+    position: relative;}
 
-@keyframes moveBackground {
-    0% {
-        background-position: 0 0;
+        @keyframes moveBackground {
+        0% {
+            background-position: 0 0;
+        }
+        25% {
+            background-position: 5% 5%;
+        }
+        50% {
+            background-position: 10% 10%;
+        }
+        75% {
+            background-position: 5% 5%;
+        }
+        100% {
+            background-position: 0 0;
+        }
+    }
+
+@keyframes glowEffect {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(29, 185, 84, 0.5);
     }
     50% {
-        background-position: 10% 10%;
-    }
-    100% {
-        background-position: 0 0;
+        box-shadow: 0 0 40px rgba(29, 185, 84, 1);
     }
 }
+
+@keyframes changeBackground {
+    0%, 33.33% {
+        background-image: linear-gradient(135deg, rgba(29, 185, 84, 0.8), rgba(25, 20, 20, 0.8)), url('https://images.pexels.com/photos/60883/girl-eyes-makeup-sexy-60883.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb');
+    }
+    33.34%, 66.66% {
+        background-image: linear-gradient(135deg, rgba(29, 185, 84, 0.8), rgba(25, 20, 20, 0.8)), url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/927610/pexels-photo-207081.jpeg');
+    }
+    66.67%, 100% {
+        background-image: linear-gradient(135deg, rgba(29, 185, 84, 0.8), rgba(25, 20, 20, 0.8)), url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/927610/pexels-photo-432059.jpeg');
+    }
+}
+
 
 .container {
     background: rgba(26, 23, 23, 0.7); 
@@ -91,7 +119,6 @@ button {
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin: 5px;
-    align-items:center;
 }
 
 button:hover {
