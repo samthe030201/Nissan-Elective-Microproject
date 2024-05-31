@@ -5,7 +5,7 @@ document.querySelector('form').addEventListener('submit', function(e) {
     let data = {};
     formData.forEach((value, key) => data[key] = value);
 
-    fetch('http://127.0.0.1:5000/predict', {
+    fetch('/predict', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
