@@ -56,8 +56,8 @@ body {
 
 .container {
     background: rgba(26, 23, 23, 0.7); 
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
     padding: 20px;
     border-radius: 15px;
     border: 2px solid rgba(25, 21, 21, 0.2); 
@@ -73,6 +73,16 @@ body {
     transition: all 0.3s ease-in-out;
 }
 
+.logo {
+    width: 100px;
+    display: block;
+    margin: 0 auto;
+    padding: 5px;
+    border-radius: 15px;
+    max-height: min-content;
+    max-width: min-content;
+    box-sizing: inherit;
+}
 .container:hover {
     background: rgba(25, 20, 20, 0.90);
     transform: scale(1.02);
@@ -82,13 +92,14 @@ body {
 h1 {
     color: #1DB954;
 }
-/* Form styles */
+
 .form-group {
     margin-bottom: 15px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
+
 
 label {
     display: block;
@@ -119,6 +130,10 @@ button {
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin: 5px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    
 }
 
 button:hover {
@@ -128,12 +143,6 @@ button:hover {
 #predictionResult {
     margin-top: 20px;
     font-size: 1.2em;
-}
-.form-group {
-    margin-bottom: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
 }
 
 label {
@@ -152,7 +161,7 @@ input {
 
 
 
-/* Responsive design */
+
 @media (min-width: 768px) {
     .container {
         width: 70%;
