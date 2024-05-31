@@ -67,11 +67,11 @@ body {
     max-width: 600px;
     text-align: center;
     box-sizing: border-box;
-    max-height: auto; 
+    max-height: 90%; 
     overflow-y: auto;
     margin: 0 auto;
     transition: all 0.3s ease-in-out;
-    bottom: 5px;
+    
 }
 
 .logo {
