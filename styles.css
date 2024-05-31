@@ -87,7 +87,20 @@ body {
     background: rgba(25, 20, 20, 0.90);
     transform: scale(1.02);
 }
-
+::-webkit-scrollbar {
+    width: 5px; /* Adjust the width to make it sleeker */
+    color: #171717;
+}
+::-webkit-scrollbar-track {
+    background: transparent; /* Make the track transparent */
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(26, 23, 23, 0.7); /* Slightly visible thumb */
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
 
 h1 {
     color: #1DB954;
