@@ -3,7 +3,10 @@
     "builds": [
       {
         "src": "api/app1.py",
-        "use": "@vercel/python"
+        "use": "@vercel/python",
+        "config": {
+          "installCommand": "sh build.sh && pip install -r requirements.txt"
+        }
       },
       {
         "src": "public/**/*",
@@ -21,3 +24,4 @@
       }
     ]
   }
+  
