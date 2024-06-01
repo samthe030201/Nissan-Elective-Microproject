@@ -10,22 +10,6 @@ CORS(app)
 
 model = pickle.load(open('xg_model.sav', 'rb'))
 
-'''print(model.get_booster().feature_names)
-example_features = [3, 1, 200000, 0.5, 0.8, 0.7, 0.0, 0.2, -5, 0.3, 120, 0.6, 1, 1, 4]
-features_array = np.array([example_features], dtype=np.float32)
-
-# Print the shape of the features array
-print("Features array shape:", features_array.shape)
-
-print(features_array)
-
-# Make prediction
-try:
-    prediction = model.predict(features_array)
-    print("Prediction:", prediction)
-except ValueError as e:
-    print("ValueError:", e)'''
-
 @app.route('/predict', methods=['POST'])
 def predict():
     data = request.json
@@ -35,11 +19,11 @@ def predict():
                 float(data['loudness']), float(data['speechiness']), float(data['tempo']),float(data['valence']), 
                 int(data['musicalkey']), int(data['musicalmode']), int(data['time_signature']),int(data['count'])]
     
-    #print(features)
+    
     
     features_array = np.array([features], dtype=np.float32)
 
-    #print(features_array)
+    
    
     prediction = model.predict(features_array)
 
@@ -52,7 +36,7 @@ def predict():
         4: 'Popularity of Artist and Song is between 81-100'
     }
     result = mapping[prediction[0]]
-    #result = 1
+    
     return jsonify({'prediction': result})
 
 if __name__ == '__main__':
